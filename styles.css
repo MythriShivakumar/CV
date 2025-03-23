@@ -9,6 +9,20 @@ body {
     cursor: default;
 }
 
+/* Preload fonts to prevent layout shifts */
+@font-face {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Mono') format('woff2');
+    font-display: swap;
+}
+
 .sidebar {
     position: fixed;
     left: 0;
@@ -199,18 +213,17 @@ h2 {
 .resume-btn {
     display: inline-block;
     padding: 12px 30px;
-    background: #fff;
-    color: #ff6f91;
+    background: rgba(255, 111, 145, 0.1);
+    color: #e0e0e0;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+    border-radius: 20px;
     font-size: 16px;
     margin-top: 20px;
+    transition: background 0.3s;
 }
 
 .resume-btn:hover {
-    background: #ff6f91;
-    color: #fff;
+    background: rgba(255, 111, 145, 0.3);
 }
 
 footer {
@@ -274,7 +287,8 @@ footer {
     .sidebar nav {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 8px;
         overflow-x: auto;
         padding-bottom: 5px;
     }
@@ -283,6 +297,7 @@ footer {
         margin: 0;
         font-size: 12px;
         white-space: nowrap;
+        padding: 5px 10px;
     }
 
     main {
@@ -332,6 +347,10 @@ footer {
         font-size: 20px;
     }
 
+    .skills-sub-list {
+        gap: 8px;
+    }
+
     .skills-sub-list span {
         font-size: 14px;
         padding: 6px 12px;
@@ -350,6 +369,7 @@ footer {
 
     .sidebar nav a {
         font-size: 10px;
+        padding: 4px 8px;
     }
 
     .hero-content h1 {
